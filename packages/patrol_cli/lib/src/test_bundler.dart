@@ -21,6 +21,7 @@ class TestBundler {
     }
 
     final contents = '''
+// @dart=2.9
 // GENERATED CODE - DO NOT MODIFY BY HAND AND DO NOT COMMIT TO VERSION CONTROL
 // ignore_for_file: type=lint, invalid_use_of_internal_member
 
@@ -81,7 +82,7 @@ Future<void> main() async {
   test('patrol_test_explorer', () {
     // Maybe somewhat counterintuitively, this callback runs *after* the calls
     // to group() below.
-    final topLevelGroup = Invoker.current!.liveTest.groups.first;
+    final topLevelGroup = Invoker.current.liveTest.groups.first;
     final dartTestGroup = createDartTestGroup(topLevelGroup);
     testExplorationCompleter.complete(dartTestGroup);
     print('patrol_test_explorer: obtained Dart-side test hierarchy:');
